@@ -28,7 +28,7 @@ export const handler = async (event, context) => {
 const saveFile = async (data) => {
   try {
     await fs.writeFile(
-      `./tmp/output-${randomUUID()}.csv`,
+      `/tmp/output-${randomUUID()}.csv`,
       data,
       "utf-8"
     );
@@ -52,7 +52,3 @@ const convertToCsv = (data) => {
     console.error(error);
   }
 };
-
-handler()
-  .then((data) => data)
-  .catch((error) => console.error(error));
